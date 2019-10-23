@@ -1,3 +1,4 @@
+/* Author Bryan Moy */
 #include <stdint.h>
 
 extern int frogger(void);
