@@ -1,3 +1,4 @@
+; Author: Bryan Moy
 ; 115200 baud rate
 	.data
 border1:	.string "|---------------------------------------------|", 0x0D, 0x0A
