@@ -1,4 +1,3 @@
-;Bryan Moy & Rafsan MD Chowdhury
 ; 115200 baud rate
 	.data
 border1:	.string "|---------------------------------------------|", 0x0D, 0x0A
@@ -61,7 +60,7 @@ reset16:	.string "|---------------------------------------------|", 0x0D, 0x0A
 reset_round_time:	.string "time:60                                        ", 0x0D, 0x0A
 reset_level:		.string "level:00                                       ", 0x0D, 0x0A
 reset_score:		.string "score:00000                                    ", 0
-	.global lab7
+	.global frogger
 	.global uart_init
 	.global timer_init
 	.global keypad_init
@@ -100,7 +99,7 @@ U0LSR: .equ 0x18
 ; r12 = frog move left/right or no move
 ; r7 = previous character
 ; 0x200003A3 holds score
-lab7:
+frogger:
 	STMFD SP!, {lr}
 	BL keypad_init
 	BL uart_init			; initialize uart
@@ -464,7 +463,7 @@ reset_null
 	LDR r2, [r0]
 	ORR r1, r1, r2
 	STR r1, [r0]
-	B lab7
+	B frogger
 	LDMFD SP!, {lr}
 	MOV pc, lr
 
